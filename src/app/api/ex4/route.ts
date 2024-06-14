@@ -12,6 +12,7 @@ import { RunnableLike } from "langchain/runnables";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { HttpResponseOutputParser } from "langchain/output_parsers";
 import { AIMessageChunk } from "langchain/schema";
+import { Snippet } from "next/font/google";
 
 const loader = new JSONLoader("src/data/states.json", [
   "/state",
@@ -69,6 +70,18 @@ export async function POST(req: Request) {
     //   },
     // ];
     const documents = [
+      {
+        title: "Harrison's work",
+        snippet: "Harrison worked at Twitch as an engineer.",
+      },
+      {
+        title: "Harrison's work duration",
+        snippet: "Harrison worked at Twitch for 3 years.",
+      },
+      {
+        title:'Philips Healthcare',
+        snippet:"Philips is a bangalore based startup"
+      },
       {
           title: "MRI Scan Procedure",
           snippet: "An MRI scan uses powerful magnets and radio waves to create detailed images of the inside of the body. It is commonly used to examine the brain, spine, joints, and soft tissues.",
