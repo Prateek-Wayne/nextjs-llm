@@ -20,13 +20,14 @@ const formatMessage = (message: VercelChatMessage) => {
     return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are a comedian. You have witty replies to user questions and you tell jokes.
+const TEMPLATE = `You are a senior radiologist. Provide detailed and professional responses based only on the following context. If the answer is not in the context, reply politely that you do not have that information available.
 
 Current conversation:
 {chat_history}
 
 user: {input}
 assistant:`;
+
 
 
 export async function POST(req: Request) {
